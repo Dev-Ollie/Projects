@@ -96,6 +96,8 @@ while x == True: #Creates a loop that will repeat the process
                             decryption.append(lowercase[decrypting])
                         elif i.isspace():
                             decryption.append(" ")
+                    output = ''.join(str(e) for e in decryption)
+                    print("\nCaesar key:", encrypt_key, " | Actual Message:", output) # Returns the output from the decrypt method
                 #Decrypt using brute force (trying all combos)
                 elif entered_key == False:
                     for n in range(1, 27): #Trying all shift keys 1-26
@@ -113,9 +115,6 @@ while x == True: #Creates a loop that will repeat the process
                         output = ''.join(str(e) for e in decryption)
                         print("Caesar key:", n, " | Ciphered Message:", output) #Print all the attempted shift keys and the result, the user can determin what the key was
                         decryption = []
-                if option == 'e':
-                    output = ''.join(str(e) for e in decryption)
-                    print("\nPlainText:", plaintext, "\nCiphered Message:", output) # Returns the output from the earlier encrypt method
                 print("\n")
                 x = True #Repeats the process, re-enables the first loop
                 
